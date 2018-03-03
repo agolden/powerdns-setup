@@ -18,9 +18,9 @@ apt-get update && apt-get install -y \
 #mkdir -p /var/run/mysqld
 #chown mysql:mysql /var/run/mysqld
 
-#MYSQL_CONFIG=/etc/mysql_defaults.cnf
-#sed -e "s/\${MYSQL_ROOT_PASS}/$MYSQL_ROOT_PASS/" mysql_defaults.cnf > $MYSQL_CONFIG
-#chmod 400 $MYSQL_CONFIG
+MYSQL_CONFIG=/etc/mysql_defaults.cnf
+sed -e "s/\${MYSQL_ROOT_PASS}/$MYSQL_ROOT_PASS/" mysql_defaults.cnf > $MYSQL_CONFIG
+chmod 400 $MYSQL_CONFIG
 
 #mysql --defaults-extra-file=$MYSQL_CONFIG -e "CREATE DATABASE pdns"
 
